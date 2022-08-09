@@ -4,7 +4,7 @@ import product as p
 import customer as c
 
 
-TAX = 1.2
+TAX = 0.2
 c_list = []
 p_list = []
 
@@ -71,7 +71,7 @@ def new_b():
                     if new_bill == 1 or new_bill == 3:  # normal or worker bill
                         total_bill += product.price
                     if new_bill == 2:  # bill with tax
-                        total_bill += product.price * TAX
+                        total_bill += product.price * (1+TAX)
                     pro_arr.append(bar_code)  # adding to current products list
                     if product.type.value == 0:  # regular product
                         credit += product.price * 0.1
